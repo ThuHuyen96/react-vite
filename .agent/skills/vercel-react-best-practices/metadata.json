@@ -1,0 +1,7 @@
+{
+  "version": "1.0.0",
+  "references": [
+    "https://vercel.com/blog/how-react-18-improves-application-performance",
+    "https://react.dev/learn/performance"
+  ]
+}

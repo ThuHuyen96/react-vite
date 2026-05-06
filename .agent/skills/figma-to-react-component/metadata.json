@@ -1,0 +1,8 @@
+{
+  "version": "1.0.0",
+  "references": [
+    "https://www.figma.com/developers/api",
+    "https://react.dev/",
+    "https://tailwindcss.com/docs"
+  ]
+}

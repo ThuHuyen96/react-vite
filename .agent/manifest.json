@@ -1,0 +1,228 @@
+{
+  "lastUpdated": "2026-05-06T08:12:37.241Z",
+  "skills": [
+    {
+      "id": "a11y-wcag",
+      "title": "a11y-wcag",
+      "description": "WCAG 2.1 accessibility checklist based on W3C ARRM. Use for a11y audits, compliance checks, and role-based a11y tasks.",
+      "category": "Standards",
+      "path": "./skills/a11y-wcag/SKILL.md",
+      "humanCheck": "✅ Ryan",
+      "benchmarkStatus": "🟢 PASS",
+      "reviewStatus": "⚪ N/A",
+      "finalStatus": "✅ Enterprise"
+    },
+    {
+      "id": "accessibility-wcag",
+      "title": "accessibility-wcag",
+      "description": "Use when working with UI, frontend, or accessibility review. Ensures WCAG 2.2 AA compliance, produces accessible markup, reviews/audits a11y issues.",
+      "category": "Standards",
+      "path": "./skills/accessibility-wcag/SKILL.md",
+      "humanCheck": "⚠️",
+      "benchmarkStatus": "🟢 PASS",
+      "reviewStatus": "⚪ N/A",
+      "finalStatus": "🚧 Draft"
+    },
+    {
+      "id": "coding-conventions",
+      "title": "coding-conventions",
+      "description": "Project-wide naming and coding conventions for files, variables, functions, and React components. Use when writing new code, reviewing code, or before committing changes in React/Vite projects. Covers",
+      "category": "Standards",
+      "path": "./skills/coding-conventions/SKILL.md",
+      "humanCheck": "⚠️",
+      "benchmarkStatus": "🟢 PASS",
+      "reviewStatus": "⚪ N/A",
+      "finalStatus": "🚧 Draft"
+    },
+    {
+      "id": "css-sizing",
+      "title": "css-sizing",
+      "description": "Use when determining CSS sizing and layout rules for components. CSS sizing and layout rules for components. Apply to every frontend task.",
+      "category": "Standards",
+      "path": "./skills/css-sizing/SKILL.md",
+      "humanCheck": "⚠️",
+      "benchmarkStatus": "🟢 PASS",
+      "reviewStatus": "⚪ N/A",
+      "finalStatus": "🚧 Draft"
+    },
+    {
+      "id": "figma-layout-intent",
+      "title": "figma-layout-intent",
+      "description": "Use when translating Figma positioning artifacts into CSS layout strategies. Translates Figma positioning artifacts into correct CSS layout strategy (flex/grid vs absolute).",
+      "category": "Development",
+      "path": "./skills/figma-layout-intent/SKILL.md",
+      "dependsOn": [
+        ".agent/skills/css-sizing/SKILL.md",
+        ".agent/skills/markup-generation/SKILL.md"
+      ],
+      "humanCheck": "⚠️",
+      "benchmarkStatus": "🟢 PASS",
+      "reviewStatus": "⚪ N/A",
+      "finalStatus": "🚧 Draft"
+    },
+    {
+      "id": "figma-node-explorer",
+      "title": "figma-node-explorer",
+      "description": "Extract child node-ids from Figma design for component breakdown. Use when user provides Figma URL, wants to explore node hierarchy, break design into components, or implement design section by sectio",
+      "category": "Figma",
+      "path": "./skills/figma-node-explorer/SKILL.md",
+      "humanCheck": "✅ Ryan",
+      "benchmarkStatus": "🟢 PASS",
+      "reviewStatus": "⚪ N/A",
+      "finalStatus": "✅ Enterprise"
+    },
+    {
+      "id": "figma-to-react-component",
+      "title": "figma-to-react-component",
+      "description": "Extract Figma node data via MCP and implement a polished React component using the project's existing component library and design tokens. Use when converting a Figma URL or node into an independent .",
+      "category": "Figma",
+      "path": "./skills/figma-to-react-component/SKILL.md",
+      "dependsOn": [
+        "vercel-react-best-practices"
+      ],
+      "humanCheck": "⚠️",
+      "benchmarkStatus": "🟢 PASS",
+      "reviewStatus": "⚪ N/A",
+      "finalStatus": "🚧 Draft"
+    },
+    {
+      "id": "find-skills",
+      "title": "find-skills",
+      "description": "Helps users discover and install agent skills. Use when user asks questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or expresses interest in extending capabilities.",
+      "category": "Meta",
+      "path": "./skills/find-skills/SKILL.md",
+      "humanCheck": "⚠️",
+      "benchmarkStatus": "🟢 PASS",
+      "reviewStatus": "⚪ N/A",
+      "finalStatus": "🚧 Draft"
+    },
+    {
+      "id": "git-commit",
+      "title": "git-commit",
+      "description": "Creates git commits following Conventional Commits format with type/scope/subject. Use when user wants to commit changes, create commit, save work, or stage and commit. Handles regular branch commits ",
+      "category": "DevOps",
+      "path": "./skills/git-commit/SKILL.md",
+      "dependsOn": [
+        "coding-conventions"
+      ],
+      "humanCheck": "⚠️",
+      "benchmarkStatus": "🟢 PASS",
+      "reviewStatus": "⚪ N/A",
+      "finalStatus": "🚧 Draft"
+    },
+    {
+      "id": "markup-generation",
+      "title": "markup-generation",
+      "description": "Use when translating Figma designs into production-ready React (Vite) components. Governs the end-to-end workflow (Phase 0→3) for translating Figma designs into production-ready React (Vite) component",
+      "category": "Development",
+      "path": "./skills/markup-generation/SKILL.md",
+      "dependsOn": [
+        ".agent/skills/css-sizing/SKILL.md",
+        ".agent/skills/figma-layout-intent/SKILL.md",
+        ".agent/skills/markup-generation/references/semantic.md",
+        ".agent/skills/markup-generation/references/a11y.md",
+        ".agent/skills/markup-generation/references/tokens-tailwind.md"
+      ],
+      "humanCheck": "⚠️",
+      "benchmarkStatus": "🟢 PASS",
+      "reviewStatus": "⚪ N/A",
+      "finalStatus": "🚧 Draft"
+    },
+    {
+      "id": "preflight",
+      "title": "preflight",
+      "description": "Use when validating Figma URLs, fetching design data, and surfacing errors before code generation. Hard-stop conditions and Figma MCP validation rules.",
+      "category": "Development",
+      "path": "./skills/preflight/SKILL.md",
+      "humanCheck": "⚠️",
+      "benchmarkStatus": "🟢 PASS",
+      "reviewStatus": "⚪ N/A",
+      "finalStatus": "🚧 Draft"
+    },
+    {
+      "id": "quality-audit",
+      "title": "quality-audit",
+      "description": "Comprehensive quality audit for frontend changes including a11y, vercel-react-best-practices, and design consistency. Use for final verification before PR or task completion.",
+      "category": "Standards",
+      "path": "./skills/quality-audit/SKILL.md",
+      "dependsOn": [
+        "a11y-wcag",
+        "vercel-react-best-practices",
+        "coding-conventions",
+        "react-useeffect",
+        "review-react",
+        "vercel-composition-patterns"
+      ],
+      "humanCheck": "⚠️",
+      "benchmarkStatus": "🟢 PASS",
+      "reviewStatus": "⚪ N/A",
+      "finalStatus": "🚧 Draft"
+    },
+    {
+      "id": "react-manifesto",
+      "title": "react-manifesto",
+      "description": "Foundational principles, core stack (React, Vite, Tailwind), and operational workflow for AI Agent development in React projects. Use when establishing project methodology or defining development stan",
+      "category": "Architecture",
+      "path": "./skills/react-manifesto/SKILL.md",
+      "humanCheck": "⚠️",
+      "benchmarkStatus": "🟢 PASS",
+      "reviewStatus": "⚪ N/A",
+      "finalStatus": "🚧 Draft"
+    },
+    {
+      "id": "react-useeffect",
+      "title": "react-useeffect",
+      "description": "React useEffect best practices from official docs. Use when writing/reviewing useEffect, useState for derived values, data fetching, or state synchronization. Teaches when NOT to use Effect and better",
+      "category": "React",
+      "path": "./skills/react-useeffect/SKILL.md",
+      "humanCheck": "⚠️",
+      "benchmarkStatus": "🟢 PASS",
+      "reviewStatus": "⚪ N/A",
+      "finalStatus": "🚧 Draft"
+    },
+    {
+      "id": "review-react",
+      "title": "review-react",
+      "description": "Use when writing, reviewing, or refactoring React components, hooks, or state management code. React code review guidelines covering Rules of React, re-render optimization, rendering performance, and ",
+      "category": "React",
+      "path": "./skills/review-react/SKILL.md",
+      "humanCheck": "⚠️",
+      "benchmarkStatus": "🟢 PASS",
+      "reviewStatus": "⚪ N/A",
+      "finalStatus": "🚧 Draft"
+    },
+    {
+      "id": "tailwind-v4",
+      "title": "tailwind-v4",
+      "description": "\"Tailwind CSS v4 patterns: CSS-first config, @theme/@utility/@custom-variant directives, migration from v3. Use when working with Tailwind v4 projects.\"",
+      "category": "Design",
+      "path": "./skills/tailwind-v4/SKILL.md",
+      "humanCheck": "⚠️",
+      "benchmarkStatus": "🟢 PASS",
+      "reviewStatus": "⚪ N/A",
+      "finalStatus": "🚧 Draft"
+    },
+    {
+      "id": "vercel-composition-patterns",
+      "title": "vercel-composition-patterns",
+      "description": "Use when refactoring components with boolean prop proliferation, building flexible component libraries, or designing reusable APIs. Triggers on tasks involving compound components, render props, conte",
+      "category": "React",
+      "path": "./skills/vercel-composition-patterns/SKILL.md",
+      "humanCheck": "⚠️",
+      "benchmarkStatus": "🟢 PASS",
+      "reviewStatus": "⚪ N/A",
+      "finalStatus": "🚧 Draft"
+    },
+    {
+      "id": "vercel-react-best-practices",
+      "title": "vercel-react-best-practices",
+      "description": "React and Next.js performance optimization guidelines from Vercel Engineering. Use when writing, reviewing, or refactoring React/Next.js code to ensure optimal performance patterns. Triggers on tasks ",
+      "category": "React",
+      "path": "./skills/vercel-react-best-practices/SKILL.md",
+      "humanCheck": "⚠️",
+      "benchmarkStatus": "🟢 PASS",
+      "reviewStatus": "⚪ N/A",
+      "finalStatus": "🚧 Draft"
+    }
+  ]
+}
