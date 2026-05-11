@@ -19,9 +19,14 @@ description: End-to-end workflow for developing a new feature or executing a tec
 ## Phase 3: Implementation
 
 7. **Implement core logic**: Follow patterns from relevant skills.
-8. **Apply checklists incrementally** — don't wait until the end.
-9. **Verify Compilation**: ALWAYS run the `next-compile` skill to check for build errors immediately after editing code.
-10. **Self-review**: Run through the `quality-audit` skill before moving on.
+8. **Composition check**: Before building any new component, apply the `composition-patterns` decision rule:
+   - 1 variant → simple functional component
+   - 2+ variants → explicit variant components (no boolean props)
+   - Distinct subregions (header/body/footer) → compound component
+   - Subcomponents sharing state → Context + Provider
+9. **Apply checklists incrementally** — don't wait until the end.
+10. **Verify Compilation**: ALWAYS run the `next-compile` skill to check for build errors immediately after editing code.
+11. **Self-review**: Run through the `quality-audit` skill before moving on.
 
 ## Phase 4: Testing & Verification
 

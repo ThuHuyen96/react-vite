@@ -5,6 +5,7 @@ category: Figma
 human_reviewed: false
 depends_on:
   - vercel-react-best-practices
+  - composition-patterns
 ---
 
 # 🎨 Figma to React Component
@@ -352,6 +353,75 @@ Do NOT generate:
 ## Component decomposition
 If the node contains repeated patterns, extract small local subcomponents (e.g., `FeatureCard`, `StatItem`).
 Avoid duplicated JSX blocks.
+
+---
+
+## Composition Patterns (from `composition-patterns` skill)
+
+Apply these rules whenever the Figma node has **2+ visual variants** or **shared state between subcomponents**.
+
+### 1. Avoid boolean props — use explicit variants
+
+When the Figma design shows multiple states (e.g., default card vs. highlighted card vs. compact card), do NOT use boolean props:
+
+```tsx
+// ❌ Incorrect — booleans create exponential complexity
+<Card isHighlighted isCompact showActions={false} />
+
+// ✅ Correct — explicit variant components
+<HighlightedCard />
+<CompactCard />
+<DefaultCard />
+```
+
+Each variant composes the pieces it needs from the compound component.
+
+### 2. Use compound components for complex Figma nodes
+
+If the Figma node has distinct subregions (header, body, footer, actions), generate a compound component:
+
+```tsx
+// ✅ Compound component structure
+const MyComponent = {
+  Frame: MyComponentFrame,
+  Header: MyComponentHeader,
+  Body: MyComponentBody,
+  Footer: MyComponentFooter,
+  Action: MyComponentAction,
+}
+
+// Usage — caller composes what they need
+<MyComponent.Frame>
+  <MyComponent.Header />
+  <MyComponent.Body />
+  <MyComponent.Footer>
+    <MyComponent.Action />
+  </MyComponent.Footer>
+</MyComponent.Frame>
+```
+
+### 3. Lift shared state to a Provider
+
+If subcomponents need to share state (e.g., open/close, selection), use `createContext` + a Provider — never sync via `useEffect`:
+
+```tsx
+// ✅ State lifted to provider
+const MyContext = createContext<MyContextValue | null>(null)
+
+function MyProvider({ children }: { children: React.ReactNode }) {
+  const [state, setState] = useState(initialState)
+  return <MyContext value={{ state, actions: { setState } }}>{children}</MyContext>
+}
+```
+
+### Decision rule
+
+| Figma node has... | Apply |
+|---|---|
+| 1 variant, no shared state | Simple functional component |
+| 2+ variants | Explicit variant components (no boolean props) |
+| Distinct subregions (header/body/footer) | Compound component |
+| Subcomponents sharing state | Context + Provider |
 
 ---
 

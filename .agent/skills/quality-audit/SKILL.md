@@ -10,6 +10,7 @@ depends_on:
   - react-useeffect
   - review-react
   - vercel-composition-patterns
+  - composition-patterns
 ---
 # Frontend Quality Audit
 
@@ -46,6 +47,7 @@ This skill provides a rigorous verification checklist to ensure every frontend c
 - [ ] **useEffect**: No unnecessary Effects — derived state calculated during render, event handlers used for user interactions (see `react-useeffect`).
 - [ ] **React Rules**: No purity violations, hooks called at top-level only, no inline component definitions (see `review-react`).
 - [ ] **Re-render**: No unnecessary re-renders — memoization applied correctly, primitive deps in effects (see `review-react`).
+- [ ] **Composition**: No boolean prop proliferation — components with 2+ variants use explicit variant components or compound components; shared state lifted to a provider (see `composition-patterns`).
 
 ### 3. Design Consistency
 
